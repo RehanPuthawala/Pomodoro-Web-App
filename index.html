@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pomodoro Timer Web App</title>
+
+    <!-- Link to Google Fonts-->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Link to FontAwesome CDN -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+    />
+    <!-- Link to CSS Files  -->
+    <link rel="stylesheet" href="css/main.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="header__container">
+        <!-- Navbar -->
+        <nav class="nav">
+          <h1 class="heading-1">Pomodoro Timer</h1>
+          <button class="nav__btn">
+            <i class="fas fa-cog nav__icon"></i>
+            Setting
+          </button>
+        </nav>
+
+        <!-- Timer Container -->
+        <div class="timer">
+          <!-- Timer Setting  -->
+          <div class="timer__setting">
+            <ul class="timer__list">
+              <li class="timer__item">
+                <button class="timer__btn pomodoro timer__active">
+                  Pomodoro
+                </button>
+              </li>
+              <li class="timer__item">
+                <button class="timer__btn shortBreak">Short Break</button>
+              </li>
+              <li class="timer__item">
+                <button class="timer__btn longBreak">Long Break</button>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Timer Countdown  -->
+          <p class="timer__countdown">
+            <span class="timer__minutes">25</span>
+            <span class="timer__colon">:</span>
+            <span class="timer__seconds">00</span>
+          </p>
+
+          <!-- Timer Start Btn -->
+          <button class="timer__start">
+            <p class="start">START</p>
+          </button>
+        </div>
+
+        <!-- Task Cotainer -->
+        <div class="task">
+          <h4 class="heading-4 task__description">Time to Programming!!</h4>
+
+          <div class="task__heading-container">
+            <h3 class="heading-3">Projects</h3>
+          </div>
+
+          <div class="task__projects"><ul class="task__list"></ul></div>
+          <button class="task__add">
+            <i class="fas fa-plus-circle task__icon"></i>
+            Add Task
+          </button>
+        </div>
+      </div>
+
+      <div class="setting__background">
+        <div class="setting__popUp">
+          <div class="setting__popUp__first-box">
+            <label
+              for="pomodoro-timer"
+              class="setting__popUp__pomodoro-timer-label"
+              >Pomodoro Timer</label
+            >
+            <input
+              type="number"
+              class="setting__popUp__pomodoro-timer"
+              id="pomodoro-timer"
+            />
+
+            <label for="sBreak-timer" class="setting__popUp__sBreak-timer-label"
+              >Short Break Timer</label
+            >
+            <input
+              type="number"
+              class="setting__popUp__sBreak-timer"
+              id="sBreak-timer"
+            />
+
+            <label for="lBreak-timer" class="setting__popUp__lBreak-timer-label"
+              >Long Break Timer</label
+            >
+            <input
+              type="number"
+              class="setting__popUp__lBreak-timer"
+              id="lBreak-timer"
+            />
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Link to JavaScript Files -->
+    <script defer src="resources/js/app.js"></script>
+    <script defer src="resources/js/add-project.js"></script>
+    <script defer src="resources/js/setting.js"></script>
+  </body>
+</html>

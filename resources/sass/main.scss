@@ -1,0 +1,528 @@
+//* VARIABLES *//
+
+$color-bg: #ecf0f1;
+$color-primary: #e74c3c;
+
+$gradient-1: #da4453;
+$gradient-2: #89216b;
+$short-break-bg: #4ca6a9;
+$long-break-bg: #498fc1;
+
+$grey-light-1: #efefef;
+$grey-light-2: #bdbbbb;
+
+$black-1: #222222;
+
+$font-primary: "Poppins", sans-serif;
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: $font-primary;
+  font-weight: 300;
+  line-height: 1.45;
+}
+
+.header {
+  // height: 200vh;
+  padding: 3rem;
+
+  display: flex;
+  flex-direction: column;
+  // justify-content: center;
+  align-items: center;
+
+  background-image: linear-gradient(to right bottom, $gradient-1, $gradient-2);
+  color: $color-bg;
+  position: relative;
+
+  &__container {
+    // background-color: #fff;
+    width: 70%;
+  }
+}
+
+.nav {
+  display: flex;
+  padding: 1rem 3rem;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 6rem;
+  // background-color: blue;
+
+  &__btn {
+    padding: 1rem 3rem;
+    background-color: rgba(#ffffff, 0.5);
+    border: none;
+    border-radius: 1rem;
+    color: inherit;
+    font-weight: 600;
+    font-family: inherit;
+    cursor: pointer;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  &__icon {
+    margin-right: 1rem;
+  }
+}
+
+.timer {
+  width: 50%;
+  margin: 0 auto;
+  padding: 3rem;
+  display: flex;
+  justify-items: center;
+  flex-direction: column;
+  background-color: rgba(#ffffff, 0.15);
+  // background-color: blue;
+  border-radius: 1rem;
+  box-shadow: 0 1rem 2rem rgba(#000, 0.25);
+
+  &__setting {
+    padding: 1rem 3rem;
+    margin-bottom: 3rem;
+  }
+
+  &__list {
+    list-style-type: none;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  // &__item {
+  // }
+
+  &__btn {
+    padding: 1rem;
+    background: none;
+    border: none;
+    font-size: 1.8rem;
+    font-weight: 300;
+    color: inherit;
+
+    cursor: pointer;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  &__active {
+    border-radius: 1rem;
+    background-color: rgba(#000000, 0.25);
+  }
+
+  &__countdown {
+    font-size: 10rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+
+  &__start,
+  &__stop {
+    background-color: $color-bg;
+    align-self: flex-start;
+    border: none;
+    padding: 1.5rem 3rem;
+    font-size: 3rem;
+    font-weight: 600;
+    align-self: center;
+    border-radius: 1rem;
+    cursor: pointer;
+
+    &:focus {
+      outline: none;
+    }
+  }
+}
+
+.task {
+  margin: 0 auto;
+  width: 50%;
+  margin-top: 5rem;
+
+  &__heading-container {
+    padding: 1rem 3rem;
+    border-bottom: 1px solid $color-bg;
+    margin-top: 2rem;
+  }
+
+  &__list {
+    margin-top: 2rem;
+    list-style-type: none;
+  }
+
+  &__project {
+    width: 100%;
+    margin-bottom: 1rem;
+    padding: 2rem 3rem;
+    background-color: $color-bg;
+    border-radius: 0.5rem;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    &::before {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      height: 0;
+      width: 100%;
+      background-color: $gradient-1;
+      transition: all 0.3s ease-out;
+      border-bottom-right-radius: 0.5rem;
+      border-bottom-left-radius: 0.5rem;
+    }
+
+    &:hover::before {
+      height: 1rem;
+    }
+  }
+
+  &__icon {
+    font-size: 2rem;
+  }
+
+  &__check {
+    font-size: 3rem;
+    color: $grey-light-2;
+    margin-right: 2rem;
+    cursor: pointer;
+
+    &:hover {
+      color: lighten($grey-light-2, 50%);
+    }
+
+    &--active {
+      color: $gradient-1;
+    }
+  }
+
+  &__name {
+    font-size: 2rem;
+    color: #000;
+    font-weight: 600;
+    display: inline-block;
+    flex: 1;
+    margin-right: 2rem;
+  }
+
+  &__pomodoro {
+    font-family: inherit;
+    font-size: 2rem;
+    font-weight: 700;
+    color: $grey-light-2;
+
+    &--completed {
+      font-size: 2.2rem;
+      margin-right: 0.5rem;
+    }
+
+    &--slash {
+      margin-right: 0.5rem;
+    }
+  }
+
+  &__note {
+    display: block;
+    background-color: palegoldenrod;
+    padding: 2rem 3rem;
+  }
+
+  &__projects {
+  }
+
+  &__add {
+    width: 100%;
+    padding: 1.5rem 0;
+    background-color: rgba(#000000, 0.25);
+    border: none;
+    color: $color-bg;
+    margin-top: 4rem;
+    font-size: 2rem;
+    font-weight: 600;
+    opacity: 0.5;
+    border: 2px dashed $color-bg;
+    cursor: pointer;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  &__icon {
+    margin-right: 1rem;
+  }
+
+  &__edit {
+    justify-self: flex-end;
+    margin-left: 2.5rem;
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    cursor: pointer;
+    box-shadow: 0 0.25rem 0.25rem 0.15rem rgba(#000, 0.25);
+    border: 0.5px dashed $grey-light-2;
+  }
+
+  &__edit-icon {
+    font-size: 2rem;
+    color: $black-1;
+  }
+}
+
+// * JavaScript Classes * //
+.pop-up {
+  width: 100%;
+  // height: 10rem; //! Temporary
+  border-radius: 1rem;
+  background-color: #fff;
+  overflow: hidden;
+  margin-bottom: 2rem;
+  animation: popUpAnimation 0.3s ease-in-out;
+
+  &__title {
+    width: 100%;
+    background: none;
+    // padding: 1rem; //!Temporary
+    border: none;
+    font-size: 2.5rem;
+    font-weight: 700;
+    font-family: inherit;
+    color: $black-1;
+    margin-top: 1.5rem;
+    padding: 0 2rem;
+
+    &::placeholder {
+      color: $grey-light-2;
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  &__div {
+    margin-top: 2rem;
+    padding: 0 2rem;
+  }
+
+  &__text {
+    font-size: 1.8rem;
+    color: $black-1;
+    font-weight: 400;
+    margin-bottom: 1rem;
+  }
+
+  &__counter {
+    padding: 0.5rem;
+    border: none;
+    background-color: $grey-light-1;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  &__btn {
+    padding: 1rem;
+    margin-left: 1rem;
+    border: none;
+    background-color: #fff;
+    box-shadow: 0.45rem 0.45rem 0.12rem -0.2rem rgba(#000, 0.2);
+    cursor: pointer;
+
+    &:focus {
+      outline: none;
+      box-shadow: 0.5rem 0.5rem 0.5rem -0.5rem rgba(#000, 0.5);
+    }
+  }
+
+  &__note {
+    font-size: 1.4rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: $grey-light-2;
+    text-decoration-color: currentColor;
+    display: block;
+    margin-top: 1.5rem;
+    cursor: pointer;
+  }
+
+  &__description {
+    width: 100%;
+    background-color: $grey-light-1;
+    height: 6rem;
+    margin-top: 3rem;
+    border: none;
+    padding: 1rem 2rem;
+    font-size: 1.4rem;
+    color: $black-1;
+    font-family: inherit;
+
+    &:focus {
+      outline: none;
+    }
+
+    &::placeholder {
+      color: $grey-light-2;
+    }
+  }
+
+  &__bottom-div {
+    margin-top: 3rem;
+    width: 100%;
+    background-color: $grey-light-1;
+    padding: 1.5rem 0;
+    padding-right: 2rem;
+    font-size: 2rem;
+    color: $grey-light-2;
+    display: flex;
+    // justify-content: space-between;
+  }
+
+  &__confirmationBox {
+    justify-self: flex-end;
+  }
+
+  &__cancel,
+  &__save,
+  &__delete {
+    text-decoration: none;
+    color: inherit;
+    margin-left: 2rem;
+    font-weight: 700;
+    font-family: inherit;
+    cursor: pointer;
+  }
+
+  &__delete {
+    opacity: 0;
+    pointer-events: none;
+    margin-right: auto;
+
+    &--active {
+      opacity: 1;
+      pointer-events: all;
+    }
+  }
+
+  &__save {
+    padding: 0.5rem 1rem;
+    color: #fff !important;
+    align-self: center;
+    border-radius: 0.5rem;
+    pointer-events: none;
+    background-color: $grey-light-2;
+    // justify-self: flex-end;
+
+    &--active {
+      background-color: $black-1;
+      pointer-events: all;
+    }
+  }
+}
+
+.setting {
+  &__background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(#000000, 0.8);
+    opacity: 0;
+    pointer-events: none;
+
+    &--active {
+      opacity: 1;
+      pointer-events: all;
+    }
+  }
+
+  &__popUp {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50%;
+    background-color: $color-bg;
+    height: 50rem;
+
+    &__first-box {
+    }
+
+    &__pomodoro-label {
+    }
+
+    &__pomodoro-timer {
+    }
+
+    &__sBreak-label {
+    }
+
+    &__sBreak-timer {
+    }
+
+    &__lBreak-label {
+    }
+  }
+}
+
+//********************************* Typography *****************************//
+
+.heading-1 {
+  font-size: 3rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  margin-right: auto;
+}
+
+.heading-3 {
+  font-size: 2.5rem;
+  text-align: center;
+}
+
+.heading-4 {
+  font-size: 2rem;
+  text-align: center;
+  font-weight: 300;
+}
+
+.start {
+  background: linear-gradient(to right bottom, $gradient-1, $gradient-2);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+@keyframes popUpAnimation {
+  0% {
+    transform: scaleY(0);
+  }
+
+  100% {
+    transform: scaleY(1);
+  }
+}
