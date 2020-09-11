@@ -18,6 +18,11 @@
     />
     <!-- Link to CSS Files  -->
     <link rel="stylesheet" href="css/main.css" />
+
+    <!-- Link to JavaScript Files -->
+    <script defer src="resources/js/app.js"></script>
+    <script defer src="resources/js/add-project.js"></script>
+    <script defer src="resources/js/setting.js"></script>
   </head>
   <body>
     <header class="header">
@@ -65,10 +70,12 @@
 
         <!-- Task Cotainer -->
         <div class="task">
-          <h4 class="heading-4 task__description">Time to Programming!!</h4>
+          <h4 class="heading-4 task__description u-text-center">
+            Time to Programming!!
+          </h4>
 
           <div class="task__heading-container">
-            <h3 class="heading-3">Projects</h3>
+            <h3 class="heading-3 u-text-center">Projects</h3>
           </div>
 
           <div class="task__projects"><ul class="task__list"></ul></div>
@@ -81,43 +88,98 @@
 
       <div class="setting__background">
         <div class="setting__popUp">
-          <div class="setting__popUp__first-box">
-            <label
-              for="pomodoro-timer"
-              class="setting__popUp__pomodoro-timer-label"
-              >Pomodoro Timer</label
-            >
-            <input
-              type="number"
-              class="setting__popUp__pomodoro-timer"
-              id="pomodoro-timer"
-            />
+          <!-- Setting Header -->
+          <div class="setting__header">
+            <h2 class="heading-3 heading-3--grey">Timer Setting</h2>
+            <span class="setting__close">
+              <i class="fa fa-times setting__close-icon" aria-hidden="true"></i>
+            </span>
+          </div>
 
-            <label for="sBreak-timer" class="setting__popUp__sBreak-timer-label"
-              >Short Break Timer</label
-            >
-            <input
-              type="number"
-              class="setting__popUp__sBreak-timer"
-              id="sBreak-timer"
-            />
+          <!-- Setting Body -->
+          <div class="setting__body">
+            <!-- First Box => Time -->
+            <div class="setting__time">
+              <h4 class="heading-4 heading-4--black u-fw-400">
+                Time (minutes)
+              </h4>
+              <div class="setting__time-inner-box">
+                <div class="setting__input-box">
+                  <label for="pomodoro" class="setting__label">Pomodoro</label>
+                  <input
+                    type="number"
+                    id="pomodoro"
+                    class="setting__input"
+                    value="25"
+                  />
+                </div>
+                <div class="setting__input-box">
+                  <label for="sBreak" class="setting__label">Short Break</label>
+                  <input
+                    type="number"
+                    id="sBreak"
+                    class="setting__input"
+                    value="5"
+                  />
+                </div>
+                <div class="setting__input-box">
+                  <label for="lBreak" class="setting__label">Long Break</label>
+                  <input
+                    type="number"
+                    id="lBreak"
+                    class="setting__input"
+                    value="15"
+                  />
+                </div>
+              </div>
+            </div>
 
-            <label for="lBreak-timer" class="setting__popUp__lBreak-timer-label"
-              >Long Break Timer</label
-            >
-            <input
-              type="number"
-              class="setting__popUp__lBreak-timer"
-              id="lBreak-timer"
-            />
+            <!-- Second Box => Auto Start Next Round  -->
+            <div class="setting__next-round">
+              <h4 class="heading-4 heading-4--black u-fw-400">
+                Auto Start Next Round ?
+              </h4>
+              <input
+                type="checkbox"
+                id="checkboxForNR"
+                class="setting__checkbox"
+              />
+              <label for="checkboxForNR" class="setting__checkbox--label">
+                <span class="setting__checkbox--round">&nbsp;</span>
+              </label>
+            </div>
+
+            <!-- Third Box => Sound Volume -->
+            <div class="setting__sound-volume">
+              <h4 class="heading-4 heading-4--black u-fw-400">Sound Volume</h4>
+              <input
+                type="range"
+                class="setting__range"
+                min="0"
+                max="100"
+                value="50"
+              />
+            </div>
+
+            <!-- Fourth Box => Dark Mode -->
+            <div class="setting__dark-mode">
+              <h4 class="heading-4 heading-4--black u-fw-400">Dark Mode</h4>
+              <input
+                type="checkbox"
+                id="checkboxForDM"
+                class="setting__checkbox"
+              />
+              <label for="checkboxForDM" class="setting__checkbox--label">
+                <span class="setting__checkbox--round">&nbsp;</span>
+              </label>
+            </div>
+          </div>
+          <!-- Footer Of Setting-->
+          <div class="setting__footer">
+            <a href="#" class="setting__ok">OK</a>
           </div>
         </div>
       </div>
     </header>
-
-    <!-- Link to JavaScript Files -->
-    <script defer src="resources/js/app.js"></script>
-    <script defer src="resources/js/add-project.js"></script>
-    <script defer src="resources/js/setting.js"></script>
   </body>
 </html>
